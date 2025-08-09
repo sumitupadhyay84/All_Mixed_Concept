@@ -4,11 +4,20 @@
     <title>Hello World!</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  // real example of closure;
   <body>
       <button id="green">Green</button>
       <button id="orange">Orange</button>
       <script> // closure provide the access of child function from parent function lexical scope. 
+  
+  // without closure
+  document.getElementById("green").onclick=function(){
+  document.body.style.backgroundColor = `green`;
+}
+document.getElementById("orange").onclick=function(){
+  document.body.style.backgroundColor = `orange`;
+}
+
+    // with closure to change the background color;
       function clickHandler(color){
         return function(){
          document.body.style.backgroundColor = `${color}` // access color by child function
